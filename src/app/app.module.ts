@@ -7,9 +7,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+// Modules
+
+
+// Components 
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MainContainerComponent } from './components/main-container/main-container.component';
+import { TodoComponent } from './components/todo/todo.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NotFoundComponent,
+    MainContainerComponent,
+    TodoComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
