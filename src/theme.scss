@@ -4,24 +4,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap");
 
 // 👇 1. Default theme
-$theming-material-components-primary: mat-palette($mat-indigo);
-$theming-material-components-accent: mat-palette($mat-pink, A200, A100, A400);
-$theming-material-components-warn: mat-palette($mat-red);
+$angular-app-primary: mat-palette($mat-green, 700);
+$angular-app-secondary: mat-palette($mat-blue, 900);
+$angular-app-accent: mat-palette($mat-blue, 700);
 
-$theming-material-components-theme: mat-light-theme(
-  $theming-material-components-primary,
-  $theming-material-components-accent,
-  $theming-material-components-warn
+// The warn palette is optional (defaults to red).
+$angular-app-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular-app-theme: mat-light-theme(
+  (
+    color: (
+      primary: $angular-app-primary,
+      secondary: $angular-app-secondary,
+      accent: $angular-app-accent,
+      warn: $angular-app-warn,
+    ),
+  )
 );
-
 // 👇 2. Define an alternate dark theme.
-$dark-primary: mat-palette($mat-blue-grey);
+$dark-primary: mat-palette($mat-green, 800);
+$dark-secondary: mat-palette($mat-blue, 900);
 $dark-accent: mat-palette($mat-amber, A200, A100, A400);
 $dark-warn: mat-palette($mat-deep-orange);
 $dark-theme: mat-dark-theme(
   (
     color: (
       primary: $dark-primary,
+      secondary: $dark-secondary,
       accent: $dark-accent,
       warn: $dark-warn,
     ),
