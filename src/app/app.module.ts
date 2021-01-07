@@ -8,7 +8,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 // Modules
-
+import { MaterialModule } from './material.module';
 
 // Components 
 import { HomeComponent } from './components/home/home.component';
@@ -30,6 +30,7 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
