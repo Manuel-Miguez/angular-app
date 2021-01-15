@@ -1,0 +1,80 @@
+.base {
+  background: var(--color-background);
+  height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+.maindisplay {
+  background: var(--color-background);
+  filter: brightness(200%);
+  height: 25%;
+  padding: 4%;
+  font-size: 4rem;
+  text-align: right;
+  overflow: auto;
+  box-shadow: 0px -6px 10px -6px rgba(0, 0, 0, 0.75);
+}
+
+.subdisplay {
+  height: 25%;
+  font-size: 1.5rem;
+  overflow: auto;
+}
+
+.keypad {
+  display: inline-block;
+  width: 100%;
+  height: fit-content;
+}
+.keys {
+  margin: 0;
+
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+.keys:hover {
+  filter: brightness(200%);
+}
+
+.ackey {
+  color: var(--color-warn);
+  background-color: #303030;
+}
+
+.equalkey {
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.numkey {
+  color: whitesmoke;
+  background-color: #303030;
+}
+
+.opkey {
+  color: white;
+  background-color: var(--color-secondary);
+}
+
+.table-class {
+  width: 100%;
+}
+// Queries
+.keys {
+  @media (max-aspect-ratio: 1/1) {
+    padding: 7% 0%;
+    @media screen and (min-width: 644) {
+      padding: calc(5% - 100vw) 0%;
+    }
+    @media screen and (min-width: 768) {
+      padding: 4% 0%;
+    }
+  }
+
+  @media (min-aspect-ratio: 1/1) {
+    padding: 2.8% 0%;
+  }
+}

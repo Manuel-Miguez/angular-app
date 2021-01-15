@@ -1,1 +1,62 @@
-<p>todo works!</p>
+<mat-card class="container">
+  <form (submit)="addTodo($event)">
+    <mat-form-field appearance="standard">
+      <mat-label>Write your To Do!</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        [(ngModel)]="newTodo"
+        (keyup.enter)="newTodo = ''"
+        name="newTodo"
+      />
+      <mat-hint>
+        <span [hidden]="newTodo"> Type in a new todo... </span>
+        <span [hidden]="!newTodo"> Typing: {{ newTodo }} </span>
+      </mat-hint>
+    </mat-form-field>
+
+      <button
+        mat-fab
+        color="primary"
+        type="submit"
+        [disabled]="newTodo === ''"
+        aria-label="Add a Todo"
+        [class.visible-button]="!newTodo"
+      >
+        <mat-icon>bookmark</mat-icon>
+      </button>
+
+  </form>
+
+  <div class="example-container">
+    <h2>To do</h2>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todos"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of todos" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Done</h2>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="dones"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of dones" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</mat-card>

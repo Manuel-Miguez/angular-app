@@ -12,9 +12,27 @@
 @import "./theme.scss";
 
 @include angular-material-theme($angular-app-theme);
+:root {
+  --color-primary: #{mat-color($angular-app-primary)};
+  --color-accent: #{mat-color($angular-app-accent)};
+  --color-warn: #{mat-color($angular-app-warn)};
+  --color-secondary: #{mat-color($angular-app-secondary)};
+  --color-background: #e7e2e2;
+  --color-btn: #e7e2e2;
+}
 
 .dark-theme {
   @include angular-material-color($dark-theme);
+
+}
+
+:root .dark-theme{
+  --color-primary: #{mat-color($dark-primary)};
+  --color-accent: #{mat-color($dark-accent)};
+  --color-warn: #{mat-color($dark-warn)};
+  --color-secondary: #{mat-color($dark-secondary)};
+  --color-background: #303030;
+  --color-btn: #303030;
 }
 
 // Override typography for all Angular Material, including mat-base-typography and all components.
@@ -25,8 +43,11 @@
 html,
 body {
   height: 100%;
+
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #303030;
 }
