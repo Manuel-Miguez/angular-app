@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Modules
 import { MaterialModule } from './material.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 // Components 
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    DragDropModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

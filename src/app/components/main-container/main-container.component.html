@@ -1,41 +1,52 @@
-<div [class.dark-theme]="isDark"> 
+<div [class.dark-theme]="isDark">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/">Inicio</a>
-      <a mat-list-item routerLink="/todo">Todo-app</a>
-      <a mat-list-item routerLink="/calculator">Calculator</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-      type="button"
-      aria-label="Toggle sidenav"
-      mat-icon-button
-      (click)="drawer.toggle()"
-      *ngIf="isHandset$ | async">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-    <span>angular-app</span>
-    <span class="example-spacer"></span>
-      
-    <!-- 👇 below button will help us change the theme at run-time. -->
-    <button mat-icon-button (click)="toggleTheme()" matTooltip="Toggle dark theme">
-      <mat-icon>
-        brightness_6
-      </mat-icon>
-    </button>
-        
-  </mat-toolbar>
-  <div class="content">
-    <ng-content></ng-content>
-  </div>
-</mat-sidenav-content>
-</mat-sidenav-container>
+    <!--  Sidebar -->
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="false"
+    >
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Inicio</a>
+        <a mat-list-item routerLink="/todo">Todo-app</a>
+        <a mat-list-item routerLink="/calculator">Calculator</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- /Sidebar -->
+    <mat-sidenav-content>
+      <!-- Nav bar -->
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="toggler" (click)="drawer.toggle()">Angular example App</span>
+        <span class="example-spacer"></span>
+        <button
+          mat-icon-button
+          (click)="toggleTheme()"
+          matTooltip="{{ isDark ? 'Toggle Light theme' : 'Toggle Dark theme' }}"
+          aria-label="Toggle Theme from page"
+        >
+          <mat-icon>brightness_6</mat-icon>
+        </button>
+      </mat-toolbar>
+      <!-- /Nav bar -->
+
+      <!-- App content goes here -->
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
-  

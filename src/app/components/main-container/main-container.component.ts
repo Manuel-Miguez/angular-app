@@ -16,8 +16,7 @@ export class MainContainerComponent {
       map((result) => result.matches),
       shareReplay()
     );
-  themeColor: 'primary' | 'accent' | 'warn' = 'primary'; // 👈 notice this
-  isDark = false;
+  isDark:boolean = false;
   constructor(
     private overlayContainer: OverlayContainer,
     private breakpointObserver: BreakpointObserver

@@ -2,6 +2,9 @@
 .sidenav-container {
   height: 99%;
 }
+.toggler{
+  cursor: pointer;
+}
 .content {
   display: inline-block;
   height: calc(100vh - 74px);
@@ -22,4 +25,16 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.mat-sidenav-container {
+  max-height: 99vh;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar,mat-toolbar .toggler{
+  user-select: none;
 }

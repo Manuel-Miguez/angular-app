@@ -1,1 +1,47 @@
-<p>home works!</p>
+<mat-grid-list
+  [cols]="breakpoint"
+  rowHeight="fit"
+  style="height: 100%"
+  (window:resize)="onResize($event)"
+>
+  <mat-grid-tile 
+  [colspan]="breakpoint !== 4 ? 5 : 4" [rowspan]="3"
+  >
+    <img class="img-home" src="/assets/images/pexels-lukas-574071.webp" />
+  </mat-grid-tile>
+  <mat-grid-tile 
+
+  [colspan]="breakpoint !== 4 ? 1 : 2"
+  [rowspan]="breakpoint !== 4 ? 5 : 5"
+  > 
+      <mat-card >
+          hola
+      </mat-card>
+    </mat-grid-tile>
+  <mat-grid-tile
+    [colspan]="breakpoint !== 4 ? 2 : 2"
+    [rowspan]="breakpoint !== 4 ? 2 : 2"
+  >
+    <mat-card>
+      <mat-card-title-group>
+        <img mat-card-avatar src="/assets/icons/icon-512x512.png" alt="Angular Icon">
+      </mat-card-title-group>
+      <mat-card-content>
+        A SPA is also ideal for a rich user experience which keeps the user really engaged 
+        in the application by keeping the pages moving fluently because of the client side navigation
+      </mat-card-content> 
+    </mat-card>
+  </mat-grid-tile>
+  <!-- Curiosities about Angular -->
+  <mat-grid-tile 
+  [colspan]="breakpoint !== 4 ? 3 : 2"
+  [rowspan]="breakpoint !== 4 ? 2 : 3"
+  >
+    <mat-card>
+      <mat-card-title-group>
+        <img mat-card-avatar class="btn-random" (click)="randomFactGenerator()" src="/assets/icons/shuffle.svg" aria-hidden="false" aria-label="Example thumbs up SVG icon" />
+      </mat-card-title-group>
+      <mat-card-content class="centered" [class.shake-bottom]="animating"> {{ randomFact }}</mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   exports: [
@@ -33,7 +33,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatFormFieldModule,
     MatInputModule,
     MatBottomSheetModule,
-    DragDropModule
+    MatGridListModule
   ],
 })
 export class MaterialModule {}

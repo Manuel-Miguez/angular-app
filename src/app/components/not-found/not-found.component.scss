@@ -1,8 +1,4 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transform-style: preserve-3d;
@@ -10,43 +6,28 @@
 *:focus {
   outline: none !important;
 }
-body,
-html {
-  height: 100%;
-}
-body {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  padding: 12px;
-  background: #343434;
-  color: white;
-  font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro",
-    "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue",
-    Arial, sans-serif;
-  font-size: 24px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
+
 ::selection {
   background: none;
 }
 a {
   display: block;
   cursor: pointer;
-  animation: pulseColor 1000ms linear 3100ms forwards;
+  animation: pulseColor 250ms linear 2100ms forwards;
   font-weight: 500;
+  opacity: 0.2;
+  color: var(--color-warn);
+  text-decoration: none;
 }
 a:hover b,
 a:focus b {
   color: #f04f54;
 }
 a:active b {
-  color: #43cb9d;
+  color: var(--color-primary);
 }
 svg {
-  width: 50px;
+  width: 60px;
   height: auto;
 }
 .crack {
@@ -56,7 +37,7 @@ svg {
 }
 .crack polyline {
   fill: none;
-  stroke: #f04f54;
+  stroke: var(--color-warn);
   stroke-width: 10px;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -69,6 +50,8 @@ main {
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin: 0 auto;
+  margin-top: 5vh;
 }
 main > div {
   display: flex;
@@ -82,7 +65,7 @@ main > div svg {
   z-index: 1;
 }
 main > div svg polygon {
-  fill: #343434;
+  fill: transparent;
 }
 main > div span {
   display: block;
@@ -105,9 +88,7 @@ main > div:first-child span:last-child {
   transform: translateX(100%);
   animation: translateLeft 1000ms linear 1450ms forwards;
 }
-main > div:first-child svg polygon {
-  animation: removeFill 10ms ease-out 1600ms forwards;
-}
+
 main > div:last-child {
   z-index: 0;
   margin-left: -50px;
@@ -130,29 +111,22 @@ main > div:last-child span:last-child {
     stroke-dashoffset: 0;
   }
 }
-@keyframes removeFill {
-  0% {
-    fill: rgba(52, 52, 52, 1);
-  }
-  100% {
-    fill: rgba(52, 52, 52, 0);
-  }
-}
+
 @keyframes pulseColor {
   0% {
-    color: white;
+    opacity: 0.1;
   }
   25% {
-    color: #43cb9d;
+    opacity: 0.25;
   }
   50% {
-    color: white;
+    opacity: 0.5;
   }
   75% {
-    color: #43cb9d;
+    opacity: 0.7;
   }
   100% {
-    color: white;
+    opacity: 1;
   }
 }
 /* https://goo.gl/v323yz */
